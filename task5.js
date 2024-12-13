@@ -1,9 +1,11 @@
 function isOpenedParenth(char) {
     return ['(', '{', '['].includes(char);
 }
+
 function isClosedParenth(char) {
     return [')', '}', ']'].includes(char);
 }
+
 function isValid(str) {
     const parentheses = new Map([
         ['(', ')'],
@@ -11,6 +13,7 @@ function isValid(str) {
         ['[', ']']
     ]);
     let stack = [];
+
     for (const char of str) {
         if (isOpenedParenth(char)) {
             stack.push(char);
