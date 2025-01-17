@@ -1,4 +1,6 @@
-function removeDuplicates(nums) {
+const removeDuplicates = (nums) => {
+    if (nums.length === 0) { return 0; }
+
     let cnt = 1;
     let prev = nums[0];
 
@@ -9,5 +11,12 @@ function removeDuplicates(nums) {
             prev = num;
         }
     }
+
+    for (const [index] of nums.entries()) {
+        if (index >= cnt) {
+            nums[index] = '_';
+        }
+    }
+
     return cnt;
-}
+};
